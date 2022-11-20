@@ -3,6 +3,7 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
+
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
@@ -24,6 +25,7 @@ a:hover {
 }
 
 body {
+  background-color: #242424;
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
@@ -41,11 +43,12 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: white;
+  background-color: #fff;
   color: black;
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }

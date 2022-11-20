@@ -3,11 +3,18 @@
   background-color: white;
 }
 
+a {
+  color: black;
+}
+
+.Header .container a {
+  font-size: 48px;
+}
+
 .Header .container {
+  display: flex;
   width: 800px;
   height: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
+  justify-content: center;
   align-items: center;
 }

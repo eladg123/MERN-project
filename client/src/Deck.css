@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  font-family: 'Caveat', cursive;
 }
 
 .Deck form {
@@ -11,8 +12,9 @@
   align-items: center;
 }
 .Deck h1 {
-  font-size: 38px;
+  font-size: 40px;
   text-align: center;
+  color: white;
 }
 .cards {
   display: grid;
@@ -44,4 +46,14 @@
   top: 5px;
   right: 5px;
   border: 1px solid red;
+}
+
+a {
+  color: black;
+  font-family: 'Caveat', cursive;
+  font-size: 22px;
+}
+
+form button {
+  font-size: 20px;
 }
