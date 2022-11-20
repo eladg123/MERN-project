@@ -1,25 +1,23 @@
-import express, { Request, Response } from 'express'
-import Deck from '../models/Deck'
+import express from 'express'
+import { createCardForDeckController } from '../controllers/createCardForDeckController'
+import { createDeckController } from '../controllers/createDeckController'
+import { deleteCardOnController } from '../controllers/deleteCardOnController'
+import { deleteDeckController } from '../controllers/deleteDeckController'
+import { getDeckController } from '../controllers/getDeckController'
+import { getDecksController } from '../controllers/getDecksController'
 
 const deckRouter = express.Router()
 
-deckRouter.post('/', async (req: Request, res: Response) => {
-  const newDeck = new Deck({
-    title: req.body.title,
-  })
-  const createdDeck = await newDeck.save()
-  res.json({ createdDeck })
-})
+deckRouter.post('/', createDeckController)
 
-deckRouter.get('/', async (req: Request, res: Response) => {
-  const decks = await Deck.find({})
-  res.json({ decks })
-})
+deckRouter.get('/', getDecksController)
 
-deckRouter.delete('/:deckId', async (req: Request, res: Response) => {
-  const deckIdToDelete = req.params.deckId
-  await Deck.findByIdAndDelete(deckIdToDelete)
-  res.json({ message: `Successfully deleted the entry, ID: ${deckIdToDelete}` })
-})
+deckRouter.delete('/:deckId', deleteDeckController)
+
+deckRouter.post('/:deckId/cards', createCardForDeckController)
+
+deckRouter.get('/:deckId', getDeckController)
+
+deckRouter.delete('/:deckId/cards/:index', deleteCardOnController)
 
 export default deckRouter

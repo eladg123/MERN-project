@@ -25,7 +25,7 @@ function App() {
   useEffect(() => {
     async function fetchDecks() {
       const newDecks = await getDecks()
-      setDecks(newDecks)
+      setDecks(newDecks.decks)
     }
     fetchDecks()
   }, [])
@@ -34,7 +34,6 @@ function App() {
     <div className="container">
       <div className="App">
         <h1>Your Decks</h1>
-
         <ul className="decks">
           {decks.map((deck) => (
             <li key={deck._id}>
